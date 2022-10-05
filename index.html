@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bubblesort.css">
+    <title>Bubble Sort Visualiser</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h1>Bubble Sort Visualization</h1>
+            <div>
+                <label for="input-box">Enter numbers</label>
+                <input id="input-box" type="text" placeholder="separate with comma">
+                <button onclick="generateBarsFromArray()" class="btn" type="button">Done</button>
+            </div>
+            <div id="show-array">[]</div>
+        </nav>
+        <div id="home"></div>
+        <footer>
+            <button type="button" id="animation-btn" class="btn">Start Animation</button>
+        </footer>
+    </div>
+
+    <script src="js/bubblesort.js"></script>
+</body>
+</html>
