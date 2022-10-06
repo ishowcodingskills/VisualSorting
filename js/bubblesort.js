@@ -43,7 +43,6 @@ async function bubbleSort(bars) {
 
     for (let i = 1; i <= bars.length; i++) {
         for (let j = 0; j < bars.length - i; j++) {
-            console.log('run')
 
             bars[j].classList.add('compare');
             bars[j + 1].classList.add('compare');
@@ -58,7 +57,7 @@ async function bubbleSort(bars) {
                 bars[j].classList.remove('swap');
                 bars[j + 1].classList.remove('swap');
 
-                swap(bars, j, j + 1);
+                swap(bars[j], bars[j + 1]);
             }
         }
 
@@ -66,11 +65,15 @@ async function bubbleSort(bars) {
     }
 }
 
-function swap(bars, a, b) {
-    bars[a].before(bars[b]);
-    const temp = bars[a];
-    bars[a] = bars[b];
-    bars[b] = temp;
+function swap(bar1, bar2) {
+    const tempHeight = bar1.style.height;
+    const tempValue = bar1.dataset.value;
+
+    bar1.style.height = bar2.style.height;
+    bar1.dataset.value = bar2.dataset.value;
+
+    bar2.style.height = tempHeight;
+    bar2.dataset.value = tempValue;
 }
 
 function sleep(ms) {
